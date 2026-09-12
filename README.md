@@ -1,44 +1,123 @@
-# Portfolio Assignment 1: Wordle
+# Wordle – Kotlin
 
-Full instructions for this assignment are provided separately in Minerva.
+A text-based Wordle-style game developed in Kotlin as part of my university programming coursework.
 
-## Running Gradle
+The project applies object-oriented programming, structured game logic, input validation, automated testing and code-quality tools to create a playable command-line word game.
 
-This assignment is managed by the [Gradle][gra] build tool. You can execute
-a Gradle task on the Linux or macOS command line by entering `./gradlew`
-followed by a space and then the task name.
+## Features
 
-(On Windows systems whose command line is provided by `cmd.exe`, omit the
-`./` from the start of this command; on Windows systems whose command line
-is provided by Powershell, use `.\gradlew`)
+* Accepts and validates player guesses
+* Compares each guess against the target word
+* Identifies correct, present and absent letters
+* Loads valid words from a text file
+* Organises the game using modular Kotlin classes
+* Handles invalid user input
+* Includes automated unit tests
+* Uses automated formatting and static-analysis checks
 
-| Task Name     | Purpose                                               |
-|---------------|-------------------------------------------------------|
-| `test`        | Runs unit tests                                       |
-| `ktlintCheck` | Checks code quality using [ktlint][ktl]               |
-| `detekt`      | Checks code quality using [detekt][det]               |
-| `check`       | Checks quality using ktlint & detekt *and* runs tests |
-| `run`         | Runs main program                                     |
-| `distZip`     | Packages application for distribution                 |
-| `clean`       | Removes all build artifacts                           |
+## Technologies
 
-Note: if you see a 'Permission denied' error when attempting to run Gradle
-on a Linux or macOS system, fix the script permissions with
+* **Kotlin** – application development
+* **Gradle** – build automation and dependency management
+* **Kotest** – automated testing
+* **ktlint** – Kotlin formatting and style checks
+* **detekt** – static code analysis
 
-    chmod u+x gradlew
+## Project Structure
 
-## Using IntelliJ
+```text
+Wordle-Kotlin/
+├── data/
+│   └── words.txt
+├── src/
+│   ├── main/kotlin/
+│   │   ├── Main.kt
+│   │   └── Wordle.kt
+│   └── test/
+│       ├── kotlin/
+│       │   ├── KotestProjectConfig.kt
+│       │   └── WordleTest.kt
+│       └── resources/
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradlew
+└── gradlew.bat
+```
 
-To do this assignment in IntelliJ on your own PC, use the *Open Project*
-button on the Welcome screen to open this directory as an IntelliJ project.
+## Running the Application
 
-After the project has imported fully, you will be able to interact with
-Gradle via IntelliJ's Gradle tool window. After you have run a task for the
-first time, it will add a **run configuration** for that task to the drop-down
-menu at the top of the window. You can then use that menu and the *Run* button
-to run the task.
+Clone the repository:
 
+```bash
+git clone https://github.com/Mohammed-sherif-11/Wordle-Kotlin.git
+```
 
-[gra]: https://gradle.org/
-[ktl]: https://pinterest.github.io/ktlint/latest/
-[det]: https://detekt.dev/
+Move into the project directory:
+
+```bash
+cd Wordle-Kotlin
+```
+
+Run the application on macOS or Linux:
+
+```bash
+./gradlew run
+```
+
+On Windows Command Prompt:
+
+```bat
+gradlew run
+```
+
+On Windows PowerShell:
+
+```powershell
+.\gradlew run
+```
+
+## Testing
+
+Run the automated tests on macOS or Linux:
+
+```bash
+./gradlew test
+```
+
+On Windows PowerShell:
+
+```powershell
+.\gradlew test
+```
+
+## Code-Quality Checks
+
+Run the ktlint style checks:
+
+```bash
+./gradlew ktlintCheck
+```
+
+Run detekt static analysis:
+
+```bash
+./gradlew detekt
+```
+
+Run all tests and code-quality checks together:
+
+```bash
+./gradlew check
+```
+
+## What I Learned
+
+Through this project, I developed practical experience with:
+
+* Object-oriented programming in Kotlin
+* Separating application logic into maintainable components
+* Validating and processing user input
+* Reading application data from files
+* Writing automated tests
+* Using Gradle for building and running applications
+* Applying automated formatting and static-analysis tools
